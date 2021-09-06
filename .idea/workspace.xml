@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143c33d5-e936-4f85-a6bd-5d098c8191c0" name="更改" comment="" />
+    <list default="true" id="143c33d5-e936-4f85-a6bd-5d098c8191c0" name="更改" comment="完成beanDefinition练习" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -25,6 +28,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1xl5N3MtLZYj9ZD0i80DwSZBpgw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -79,11 +83,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630916794066</updated>
-      <workItem from="1630916796081" duration="2469000" />
+      <workItem from="1630916796081" duration="2845000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成beanDefinition练习" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成beanDefinition练习" />
   </component>
 </project>
