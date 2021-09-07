@@ -7,6 +7,8 @@ import com.qyc.springframeword.beans.factory.support.DefaultListableBeanFactory;
 import com.qyc.springframeword.beans.factory.support.DefaultSingletonBeanRegistry;
 import org.junit.Test;
 
+import java.util.Stack;
+
 /**
  * @description:
  * @author: qiangyuecheng
@@ -16,15 +18,17 @@ public class TestBeanDefinition {
 
     @Test
     public void test01(){
-        UserServes userServes = new UserServes();
-        BeanDefinition beanDefinition = new BeanDefinition(userServes.getClass());
+
+        BeanDefinition beanDefinition = new BeanDefinition(UserServes.class);
         DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
         defaultListableBeanFactory.registerBeanDefinition("userServes",beanDefinition);
+        defaultListableBeanFactory.registerBeanDefinition("userServes1",beanDefinition);
 
+        UserServes userServes1 = (UserServes) defaultListableBeanFactory.getBean("userServes","qyc");
+        UserServes userServes2 = (UserServes) defaultListableBeanFactory.getBean("userServes1","ssg");
 
-        UserServes userServes1 = (UserServes) defaultListableBeanFactory.getBean("userServes");
-        UserServes userServes2 = (UserServes) defaultListableBeanFactory.getBean("userServes");
-
+        userServes1.show();
+        userServes2.show();
         System.out.println(userServes1.hashCode());
         System.out.println(userServes2.hashCode());
 

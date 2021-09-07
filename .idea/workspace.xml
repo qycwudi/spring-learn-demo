@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143c33d5-e936-4f85-a6bd-5d098c8191c0" name="更改" comment="完成beanDefinition练习">
-      <change afterPath="$PROJECT_DIR$/b-bean-register/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/BeanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/config/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/config/BeanDefinitionRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/factory/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractAutowrieCapableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/TestBeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/serve/UserServes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/z-imageDoc/bean.png" afterDir="false" />
+    <list default="true" id="143c33d5-e936-4f85-a6bd-5d098c8191c0" name="更改" comment="完成bean初始化、注入、获取">
+      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/CglibSubClassInstantiationStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/InstantiationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a-bean-definition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/a-bean-definition/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a-bean-definition/src/main/java/com/qyc/springframework/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/a-bean-definition/src/main/java/com/qyc/springframework/BeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/factory/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractAutowrieCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractAutowrieCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/src/main/java/com/qyc/springframeword/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/TestBeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/TestBeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/serve/UserServes.java" beforeDir="false" afterPath="$PROJECT_DIR$/b-bean-register/src/test/java/com/qyc/serve/UserServes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +63,9 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -133,7 +129,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630916794066</updated>
-      <workItem from="1630916796081" duration="8348000" />
+      <workItem from="1630916796081" duration="10053000" />
+      <workItem from="1630981483010" duration="4000" />
+      <workItem from="1631028358058" duration="4223000" />
     </task>
     <task id="LOCAL-00001" summary="完成beanDefinition练习">
       <created>1630925582098</created>
@@ -142,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630925582098</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成bean初始化、注入、获取">
+      <created>1630943940575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630943940575</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,9 +163,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成beanDefinition练习" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成beanDefinition练习" />
+    <MESSAGE value="完成bean初始化、注入、获取" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成bean初始化、注入、获取" />
   </component>
 </project>
