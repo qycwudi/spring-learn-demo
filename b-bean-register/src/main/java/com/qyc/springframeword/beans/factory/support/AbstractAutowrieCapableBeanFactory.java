@@ -1,7 +1,11 @@
 package com.qyc.springframeword.beans.factory.support;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.qyc.springframeword.beans.factory.BeanException;
 import com.qyc.springframeword.beans.factory.config.BeanDefinition;
+import com.qyc.springframeword.beans.factory.config.BeanReference;
+import com.qyc.springframeword.beans.factory.config.PropertyValue;
+import com.qyc.springframeword.beans.factory.config.PropertyValues;
 
 import java.lang.reflect.Constructor;
 import java.sql.Connection;
@@ -25,6 +29,7 @@ public abstract class AbstractAutowrieCapableBeanFactory extends AbstractBeanFac
     public Object createBean(String beanName,BeanDefinition beanDefinition,Object[] args) throws BeanException {
         Object beanObject = null;
         beanObject = getCreateBean(beanName,beanDefinition,args);
+        applyPropertyValues(beanObject,beanName,beanDefinition);
         addSingleton(beanName,beanObject);
         return beanObject;
     }
@@ -43,5 +48,26 @@ public abstract class AbstractAutowrieCapableBeanFactory extends AbstractBeanFac
     }
     public InstantiationStrategy getInstantiationStrategy(){
         return this.instantiationStrategy;
+    }
+
+    /**
+     * 注入属性
+    */
+    public void applyPropertyValues(Object beanObject,String beanName,BeanDefinition beanDefinition){
+        try {
+            PropertyValues propertyValues = beanDefinition.getPropertyValues();
+            for (PropertyValue pro:propertyValues.getList()
+            ) {
+                String name = pro.getName();
+                Object value = pro.getValue();
+                if(value instanceof BeanReference){
+                    BeanReference beanReference = (BeanReference) value;
+                    value = getBean(beanReference.getBeanName());
+                }
+                BeanUtil.setFieldValue(beanObject,name,value);
+            }
+        }catch (Exception e){
+            System.out.println(beanName+"-注入错误");
+        }
     }
 }
